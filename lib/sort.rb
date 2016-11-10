@@ -23,21 +23,20 @@ class Sort
 
     # insert the actual element
     array[i+1] = value;
-end
-
-  def insertion_sort
-    i = @arr.length
-
-    i.times do |j|
-      insert(@arr, i, @arr[0] )
-    end
-
   end
 
+  def insertion_sort
+    i = @arr.length - 1
+
+    i.times do |j|
+      insert(@arr, j, @arr[j+1] )
+    end
+    @arr
+  end
+
+
+
+
 end
 
-#make position 0 the first pivot point
 
-
-#place everything that is less than the pivot point
-#to the left of pivot, greather than to the right
