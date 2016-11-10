@@ -6,20 +6,40 @@ class Sort
     @arr = arr
   end
 
-  def bubble_sort
-    switch = false
-    start = 1
+  def merge(left, right)
+    return_arr = []
+    if left[0] < right[0]
+      return_arr << left[0]
+    else
+      return_arr << right[0]
 
-    until switch
-      (start..@arr.length - 1).each do |item|
-        if @arr[item] > @arr[item - 1]
+  end
+
+  def merge_sort(array)
+    return array if array.length == 1
+    mid = array.length / 2
+    left_half = array[0...mid]
+    right_half = array[mid..-1]
+    merge(left_half, right_half)
+  end
+
+
+  def bubble_sort
+    len = @arr.length
+
+    loop do
+      switch = false
+      start = 0
+
+      (start..len - 2).each do |item|
+        if @arr[item] < @arr[item + 1]
           next
         else
-          @arr[item], @arr[item - 1] = @arr[item - 1], @arr[item]
+          @arr[item], @arr[item + 1] = @arr[item + 1], @arr[item]
           switch = true
         end
       end
-      
+      break if switch == false
     end
     @arr
   end

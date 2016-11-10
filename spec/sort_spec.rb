@@ -28,4 +28,12 @@ describe 'Sort' do
     end
   end
 
+  describe '#merge_sort' do
+
+    it 'sorts an array' do
+      expect(test_sort.bubble_sort).to eq(sorted)
+    end
+
+  end
+
 end
