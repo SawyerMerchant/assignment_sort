@@ -21,10 +21,10 @@ describe 'Sort' do
 
   end
 
-  describe '#buble_sort' do
+  describe '#bubble_sort' do
 
     it 'sorts an array' do
-      expect(test_sort.bubble_sort). eq(sorted)
+      expect(test_sort.bubble_sort).to eq(sorted)
     end
   end
 

@@ -6,6 +6,24 @@ class Sort
     @arr = arr
   end
 
+  def bubble_sort
+    switch = false
+    start = 1
+
+    until switch
+      (start..@arr.length - 1).each do |item|
+        if @arr[item] > @arr[item - 1]
+          next
+        else
+          @arr[item], @arr[item - 1] = @arr[item - 1], @arr[item]
+          switch = true
+        end
+      end
+      
+    end
+    @arr
+  end
+
 
   def insert(array, right_index, value)
     # value is the value of array[right_index + 1]
@@ -38,5 +56,3 @@ class Sort
 
 
 end
-
-
